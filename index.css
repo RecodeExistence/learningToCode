@@ -1,4 +1,3 @@
-
 /* styling applied to homepage */
 body { 
 background-color: black; 
@@ -19,7 +18,7 @@ a:hover {
 
 #top-nav-bar {
 	text-align: center;
-	background-color: #737373;
+	background-color: rgb(60, 60, 60);
 	opacity: 1.5;
 	border-radius:50px;
 	width:100%;
@@ -108,5 +107,3 @@ hr {
 	font-size:16px;
 	font-weight:bold;
 }
-
-
