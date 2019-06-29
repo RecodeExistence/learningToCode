@@ -48,20 +48,28 @@
 	"buffers":
 	[
 		{
-			"file": "recodeYou.html",
+			"file": "jsTextScroller/index.html",
 			"settings":
 			{
-				"buffer_size": 2302,
+				"buffer_size": 645,
 				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "<!doctype html>"
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.css",
+			"file": "jsTextScroller/scripts.js",
 			"settings":
 			{
-				"buffer_size": 1442,
+				"buffer_size": 103,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "jsTextScroller/index.css",
+			"settings":
+			{
+				"buffer_size": 183,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -107,6 +115,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/FlyinJesus/Desktop/GitControl/repos/Portfolio/jsTextScroller/index.css",
+		"/C/Users/FlyinJesus/Desktop/GitControl/repos/Portfolio/recodeYou.html",
 		"/C/Users/FlyinJesus/Desktop/GitControl/repos/Portfolio/index.css",
 		"/C/Users/FlyinJesus/Documents/banditpetplaninfo.txt",
 		"/C/Users/FlyinJesus/Desktop/GitControl/repos/Portfolio/.git/MERGE_MSG",
@@ -268,28 +278,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "recodeYou.html",
+					"file": "jsTextScroller/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2302,
+						"buffer_size": 645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								367,
-								367
+								112,
+								112
 							]
 						],
 						"settings":
 						{
-							"auto_name": "<!doctype html>",
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -297,31 +306,58 @@
 				},
 				{
 					"buffer": 1,
-					"file": "index.css",
+					"file": "jsTextScroller/scripts.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1442,
+						"buffer_size": 103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								385,
-								385
+								99,
+								99
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 86.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "jsTextScroller/index.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

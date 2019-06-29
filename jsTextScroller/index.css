@@ -1,0 +1,11 @@
+#text-box {
+	color: black;
+	background-color:white;
+	border-color:black;
+	border-radius:6px;
+	border-style: solid;
+	height:60px;
+	width: 400px;
+	margin-left:25%;
+	margin-right: 25%;
+}
