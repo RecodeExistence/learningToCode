@@ -1,0 +1,112 @@
+
+/* styling applied to homepage */
+body { 
+background-color: black; 
+color: gray;
+font-family: monospace;
+font-size: 18px;
+}
+
+a {
+	color: green;
+	padding:2px;
+
+}
+
+a:hover {
+	color:blue;
+}
+
+#top-nav-bar {
+	text-align: center;
+	background-color: #737373;
+	opacity: 1.5;
+	border-radius:50px;
+	width:100%;
+}
+
+#top-nav-bar li {
+	background-color:black;
+	color:green;
+	font-size:16px;
+	margin-right: 75px;
+	padding:7px;
+	border-radius: 50px;
+	height:100px;
+	width:50px;
+}
+
+
+.companyNameTitle {
+	color: green;
+	margin-bottom: 5px;
+	line-height:1.8;
+	font-weight: bold;
+	border-width: 0px 0px 5px 0px;
+	border-style: dotted;
+	border-color: green;
+	background-color: black;
+}
+
+.explore {
+	font-size:25px;
+	color:white;
+	font-weight:bold;
+}
+
+
+#titleText {
+	padding-left:30px;
+	padding-top: 10px;
+	line-height: 1.6;
+	color: red;
+	border-style: ;
+	width: 40em;
+	font-size: 20px;
+}
+
+#intro-text {
+	padding-left:30px;
+	padding-top: 30px;
+}
+			
+#fullContainer {
+	margin: 10% 25% 10% 10%;
+	padding: 20px 20px;
+	border-width: 5px;
+	border-style:  dotted;
+	border-color: grey;
+	border-radius: 25px;
+	line-height: 35px;
+}
+
+.linkButtons {
+	border: 1px solid grey;
+	border-radius:20px;
+	width:50%;
+	text-align:center;
+}
+
+#useful-links-list {
+	text-align:center;
+}
+
+nav li {
+	background-color:white;
+	font-size:16px;
+	font-weight:bold;
+	display:inline;
+}
+
+hr {
+	margin-top: 30px;
+}
+
+#code {
+	color:white;
+	opacity:0.8;
+	font-size:16px;
+	font-weight:bold;
+}
+
+

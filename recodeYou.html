@@ -3,77 +3,56 @@
 <html lang = "en"> 
 
 <head>
-	<style>
-
-		#body-wrapper {
-			color: green;
-			background-color: black;
-			border-style: solid; 
-			border-width: 7px;
-			border-radius:8px;
-		}
-		
-		#welcome-header {
-			color: black;
-			background-color: red;
-			border-style: solid;
-			border-width: 5px;
-			border-radius: 8px;
-			border-color: "light grey";
-		}
-
-		#welcome-text {
-			color: green;
-			background-color: lightgrey;
-			border-style: solid; 
-			border-width: 1px;
-			border-radius:2px;
-
-		}
-
-		#likeLinksBar {
-			width:100px;
-			height:250px;
-			border-style: solid;
-			border-width: 2px;
-			border-radius: 2px;
-		}
-	 </style>
+	<link rel = "stylesheet" type="text/css" href="index.css"> 
 	<meta charset = "utf-8"> 
-	<title> Recode.you </title> 
+	<title> RecodeLife.Tech </title> 
 </head> 
-
+<div id = "fullContainer"> 
 <body> 
 
-<div id ="body-wrapper">
-<div id = "welcome-header">
-<h1> Welcome to Recode.you... </h1> <br>
+<div id = "titleText"> 
+	<h1> Welcome to <span class="companyNameTitle">/RecodeLife.Tech/></span> </h1> 
+	<p> A place for <em>tech, self-improvement, programming, coding</em> and all sorts of other <em>IT related subjects as they come to me.	</em>  Let's <span class="explore">explore!</span><br>
+	</p>
 </div>
 
-<div id = "likeLinksBar">
-<h1 id = "likeLinks"> Useful Links </h1>
-<p id = "likeLinksText"> Here are some sites I've found useful to me while I've been learning: </p> 
-<nav>
-	<table> 
-		<tr> 
-			<td> <a href = "https://www.freecodecamp.org/"> FreeCodeCamp</a></td>
-		</tr>
-		<tr>
-			<td> <a href = "https://www.google.com/"><span id ="google"> Google </span> is your friend.</a></td>
-		</tr>
-	</table>
+<nav id = "top-nav-bar">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Portfolio</a></li>
+		<li><a href="#">Contact Me</a></li>
+		<li><a href="#">Hire Me</a></li>
+
+	</ul>
+
 </nav>
-</div>
 
+<div id = "intro-text">
 
-<div id = "welcome-text">
-<p> Recode.you is my place to tinker with things mainly based on the subject of web development. </p>
-<p> I'm currently in the process of teaching myself to code, in aid of my goal to become a full time Web Developer.  </p>
+	<p> <span class = "companyNameTitle">RecodeLife.Tech</span> is my place to tinker with things mainly based on the subject of <span class="explore">Web Development.</span> </p>
+	<p> I'm currently in the process of teaching myself to <span id="code">code</span>, in aid of my goal to become a full time Web Developer.  </p>
 <br/>
 
-<p> If things seem a little broken or buggy on the page, it's probably because they are.  If you find something like that, feel free to let me know via my contact form.  I'm still learning, so mistakes will be made.  Thanks for your patience and understanding, hopefully this will eventually look quite good.  </p>
+	<p> If things seem a little broken or buggy on the page, it's probably because they are.  If you find something like that, feel free to let me know via my contact form.  I'm still learning, so mistakes will be made.  Thanks for your patience and understanding, hopefully this will eventually look quite good.  </p>
+
 </div>
-</div>
+<hr>
+
+<nav id = "useful-links-list">
+	<h1 id="useful-links-heading"> Useful Links </h1>
+	 
+			<ul>
+				<li class= "linkButtons"> <a href = "https://www.freecodecamp.org/" target="_blank"> FreeCodeCamp</a></li>
+				<li class="linkButtons"> <a href = "https://www.google.com/"><span id ="google"> Google </span> is your friend</a></li>
+				<li class="linkButtons"> <a href = "https://codecademy.com">CodeCademy</a></li>
+				<li class="linkButtons"> <a href = "https://youtube.com">Youtube.. <em>so much!</em></a></li>
+</nav>
+
+
+
+
+
 
 </body> 
-
+</div>
