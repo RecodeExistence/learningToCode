@@ -1,0 +1,99 @@
+a {
+  color: red;
+}
+a:hover {
+  color: yellow;
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(255,255,255,0.6);
+}
+
+#title {
+  display:block;
+  margin-left:auto; 
+  margin-right:auto; 
+  max-width:100%;
+}
+
+nav {
+  margin: 8px;
+  width: 70%;
+  border: 5px solid grey;
+  background-color:darkgrey;
+  border-radius: 50px;
+}
+
+nav li {
+  margin-right:8%;
+  border-radius:10px;
+  padding: 5px;
+  display:inline;
+  font-size:22px;
+  background-color:yellow;
+}
+
+nav li:hover {
+  background-color: blue;
+  color: white;
+
+}
+
+#main {
+  width: 90%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  background-color: #333;
+  font-family: "BioRhyme Expanded", serif;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 2em;
+
+  border: 3px solid red;
+  border-radius: 15px;
+}
+
+.emphasize { /* class used for emphasizing text, reuse where needed */
+  font-size: 22px;
+  font-style: underline;
+}
+
+#title {
+  text-align: center;
+}
+
+#img-div {
+  display: block;
+  max-width: 100%;
+  font-size: 13px;
+  font-style: italic;
+  width: 75%;
+  margin: auto;
+  margin-top:5%;
+}
+
+#img-caption {
+	width: 25%;
+	position:relative;
+	margin-left: 75%;
+	margin-top:-27%;
+}
+#img-div img {
+  display: block;
+  max-width: 100%;
+  border-radius: 40px;
+  margin: auto;
+}
+
+#img-div img:hover {
+	box-shadow: 21px -2px 34px 1px rgba(248,243,243,1);
+-webkit-box-shadow: 21px -2px 34px 1px rgba(248,243,243,1);
+-moz-box-shadow: 21px -2px 34px 1px rgba(248,243,243,1);
+
+#tribute-info {
+  margin: 5%;
+  text-align: justify;
+}

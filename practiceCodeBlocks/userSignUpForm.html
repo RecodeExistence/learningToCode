@@ -1,0 +1,34 @@
+<doctype html> 
+
+<html> 
+
+<head>
+	<script src="validate.js">
+		let userName = {
+	fName: function() {
+		let fName = document.getElementById("fName");
+		console.log(fName.value);
+	}
+};
+	</script>
+	<link rel="stylesheet" type="text/css" href="signup.css"> 
+	<meta charset="utf-8">
+	<title>Sign-Up</title>
+</head> 
+
+<body> 
+	<div class="container">
+
+		<div id="signupForm">
+		<h1> Signup Form </h1>
+		<form>
+			First Name:<br>
+			<input type="text" name="inputFirstName" class="textBox" id="fName" value="testing"><br><br>
+			Surname:<br><input type="text" name="inputSurName" value="testing" class="textBox"><br>
+		
+			<input type="submit" name="submit-btn" id="submitBtn">
+		</form></div>
+
+
+</body>
+</html> 
