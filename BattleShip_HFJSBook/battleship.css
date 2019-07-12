@@ -9,6 +9,7 @@
 
 body {
 	background-color: black;
+	--main-bgcolor-green: rgb(83, 175, 19);
 }
 
 #board { /* game board background */
@@ -22,15 +23,13 @@ body {
 #messageArea {
 	position: absolute;
 	top: 0; left: 0;
-	color: rgb(83, 175, 19);
+	color: var(--main-bgcolor-green);
 }
 
 table {
 	position: absolute;
 	left: 173px;
 	top: 98px;
-	border-spacing: 0px;
-	border: 2px solid blue;
 }
 
 td {
@@ -38,16 +37,31 @@ td {
 	height: 94px;
 }
 
+form {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 15px; 
+	background-color: var(--main-bgcolor-green);
+}
+
+form input {
+	background-color: rgb(152, 207, 113);
+	border-color: var(--main-bgcolor-green);
+	font-size: 1em;
+	color: red;
+}
+
 #takeGuessInput {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	padding: 15px;
-	background-color: rgb(83, 175, 19);
+	background-color: var(--main-bgcolor-green);
 }
 
 #takeGuessInput input {
 	background-color: rgb(152, 207, 113);
-	border-color: rgb(83, 175, 19);
+	border-color: var(--main-bgcolor-green);
 	font-size: 1em;
 }

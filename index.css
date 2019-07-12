@@ -70,7 +70,7 @@ a:hover {
 }
 			
 #fullContainer {
-	margin: 10% 25% 10% 10%;
+	margin: auto;
 	padding: 20px 20px;
 	border-width: 5px;
 	border-style:  dotted;
