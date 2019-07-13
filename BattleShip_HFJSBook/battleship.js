@@ -20,14 +20,6 @@ displayHit: function(location) {
 	cell.setAttribute("class", "hit");
 }, 
 
-
-
-/* REMOVE THIS BEFORE MERGING WITH MASTER, ONLY AFTER READING AND ACTING.
-	Issue for this is that the displayMiss method won't run correctly.  The returned error is: 
-	battleship.js:31 Uncaught TypeError: Cannot read property 'setAttribute' of null
-    at Object.displayMiss (battleship.js:31)
-    at battleship.js:35*/
-
     displayMiss: function(location) {
 // Display the hit.png on the cell entered.
 	let cell = document.getElementById(location); 
