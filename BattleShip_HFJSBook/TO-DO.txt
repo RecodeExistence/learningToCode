@@ -1,0 +1,1 @@
+## Clean data from parameter location, input from takeGuessInput form textfield.  
