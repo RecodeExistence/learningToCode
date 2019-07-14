@@ -1,0 +1,24 @@
+## DATE - 14/07/2019 (am) 
+	Created branch "starting_model" 
+
+	Edited CSS rule for hit and miss, increased positioning right to move images center of grid squares.  
+	
+	Tested view object, works in isolation.  Do not edit master version till complete.
+	
+	Added model object, to be worked on tomorrow.  
+
+	Added ships array of objects, storing each ship as a collection of locations and hits/misses. 
+		*** SEE TO-DO.TXT, WORK REQUIRED. ***
+
+## DATE - 14/07/2019 (pm) 
+	Continue branch "starting_model"
+
+	Moved ships array of objects containing location and hits in each array index as it's own object.  key:value pair = ships:data structure.  
+
+	Completed fire() method.  Checks for indexOf user guess.  Returns true if contained in location object array.  False otherwise.  
+
+	created isSunk() method, checks through the hits array to see if all 3 locations of a ship are hit yet.  
+		called in the fire() method each time a guess is passed from the controller.  
+
+	Added the code to update the view that state has changed and it needs to react accordingly.  
+		Tested model by calling fire on hardcoded values.  

@@ -1,10 +1,14 @@
 /*image placements for hit and misses */
 .hit {
 	background: url("ship.png") no-repeat center center;
+	position: relative;
+	right: 1em;
 }
 
 .miss {
 	background: url("miss.png") no-repeat center center;
+	position: relative;
+	right: 1em;
 }
 
 body {
