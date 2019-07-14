@@ -1,1 +1,2 @@
-## Clean data from parameter location, input from takeGuessInput form textfield.  
+## Clean data from parameter location, input from takeGuessInput form textfield.
+	Basically make sure that the type and format of the data we recieve is what we expect.  

@@ -10,7 +10,7 @@ var view = {
 	displayMessage: function(msg) {
 		let messageArea = document.getElementById("messageArea");
 		messageArea.innerHTML = msg;
-},
+	},	
 
 
 // this method takes the users entered location, converts from a game grid to an id from the table in html
@@ -18,19 +18,29 @@ displayHit: function(location) {
 // Display the hit.png on the cell entered.
 	let cell = document.getElementById(location); 
 	cell.setAttribute("class", "hit");
-}, 
+	}, 
 
     displayMiss: function(location) {
 // Display the hit.png on the cell entered.
 	let cell = document.getElementById(location); 
 	cell.setAttribute("class", "miss");
-} 
+	} 
 };
 
-view.displayMiss("50");
-view.displayHit("34");
-//view.displayMiss("55");
-view.displayHit("12");
-//view.displayMiss("25");
-view.displayHit("26");
-view.displayMessage("Power activated");
+
+/*let model = {
+	// game set up - set up grid size, how many ships in game.
+	boardSize: 10 , // size of board for grid. 
+	numships: , // How many ships are in the game
+	shipLength: , 	// how many cells will each ship occupy?
+
+	// properties - current state:  
+	ships: , 	// ship locations and hits
+	shipsSunk: ,	// how many ships sunk 
+	 
+
+	// method fires upon ships, decides if hit or miss.
+	fire: , 
+};
+*/
+view.displayMessage("testing testing, is this thing on?");
