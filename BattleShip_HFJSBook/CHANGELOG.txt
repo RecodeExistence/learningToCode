@@ -1,0 +1,11 @@
+## DATE - 14/07/2019 
+	Created branch "starting_model" 
+
+	Edited CSS rule for hit and miss, increased positioning right to move images center of grid squares.  
+	
+	Tested view object, works in isolation.  Do not edit master version till complete.
+	
+	Added model object, to be worked on tomorrow.  
+
+	Added ships array of objects, storing each ship as a collection of locations and hits/misses. 
+		*** SEE TO-DO.TXT, WORK REQUIRED. ***
