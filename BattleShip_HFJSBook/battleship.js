@@ -28,44 +28,37 @@ displayHit: function(location) {
 };
 
 
-/*let model = {
+let model = {
 	// game set up - set up grid size, how many ships in game.
-	boardSize:  , // size of board for grid. 
-	numships: , // How many ships are in the game
-	shipLength: , 	// how many cells will each ship occupy?
+	boardSize: 7 , // size of board for grid. 
+	numships: 3, // How many ships are in the game
+	shipLength: 3, 	// how many cells will each ship occupy?
+	shipsSunk: ,	// how many ships have been sunk so far. 
 
 	// properties - current state:  
-	ships: , 	// ship locations and hits
-	shipsSunk: ,	// how many ships sunk 
-	 
-
-	// method fires upon ships, decides if hit or miss.
-	fire: , 
-};
-*/
-view.displayMessage("testing testing, is this thing on?");
-
-
-let ships = [ /* start of array of objects to update and monitor ships state
-				 Each generated ships locations, along with how many hits they have, stored as an object 
-			at an index of this ships array */
-	{	
+	ships:  [ 	/*array of objects, each object stores the locations of a ship, how many hit's it's had.  
+					Access the locations and hits indexes just like any other array indexes.*/
+	{	//index[0] object.  array of locations, array of hits.   
 		locations: ["00", "01", "02"],
 		hits: ["", "", ""]	
 	}, 	//end of index[0] object, first ship.
-
-	{
+	
+	{	//index[1] object. 
 		locations: [], 
 		hits: ["", "", ""]
 	},  //end of index[1] object , second ship.
-
-	{
+	
+	{	//index[2] object.
 		locations: [], 
 		hits: ["", "", ""]
 	}   //end of index[2] object, third ship.   
 
 
-]; // end of array of objects. 
+]; // end of array of objects.  , 	// ship locations and hits
+	
+	 // method fires upon ships, decides if hit or miss.
+	fire: , 
+};
 
 /* Looks like it will be possible to dynamically add ships to the array.  create a new object containing
    locations and hits for every new ship generating, and push() it to the ships array.  
