@@ -15,4 +15,10 @@
 
 	Moved ships array of objects containing location and hits in each array index as it's own object.  key:value pair = ships:data structure.  
 
-	Completed fire() method.  Checks for indexOf user guess.  Returns true if contained in location object array.  False otherwise. 
+	Completed fire() method.  Checks for indexOf user guess.  Returns true if contained in location object array.  False otherwise.  
+
+	created isSunk() method, checks through the hits array to see if all 3 locations of a ship are hit yet.  
+		called in the fire() method each time a guess is passed from the controller.  
+
+	Added the code to update the view that state has changed and it needs to react accordingly.  
+		Tested model by calling fire on hardcoded values.  
