@@ -1,4 +1,6 @@
-// Program for Admissions. Edited 16/07/2019
+
+/*Program for Admissions. Edited 16/07/2019,  GitHub Repo - Managed with Git via GitBash, standard workflow applies: https://github.com/RecodeExistence/learningToCode/blob/master/CodeClan/stringConcatFunction.js */  
+    
 const getWeather = function(country, weatherType) {
 
     //Assign the datatypes of our arguments to variables.  
@@ -31,6 +33,7 @@ console.log(getWeather(50, "fail"));
 
 
 /* An alternate version of this code could be (note, i would keep the data sanitising as a function of it's 
-    own that I could call on the getWeather function externally, then pass it back):  
+    own that I could call on the getWeather function externally, then pass it back):
 
-const getWeather = (country, getWeather) => console.log(`The weather in ${country} is ${getWeather}`); 
+const getWeather = (country, getWeather) => console.log(`The weather in ${country} is ${getWeather}`); */ 
+```
