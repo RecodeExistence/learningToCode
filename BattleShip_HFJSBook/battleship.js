@@ -147,6 +147,16 @@ let model = {
        function init() {
            let fireButton = document.getElementById("fireButton"); 
            fireButton.onclick = handleFireButton;
+           let guessInput = document.getElementById("guessInput");
+           guessInput.onkeypress = handleKeyPress;
+       }
+
+       function handleKeypress(e) {
+           let fireButton = document.getElementById("fireButton");
+           if (e.keyCode === 13) {
+               fireButton.click();
+               return false;
+           }
        }
 
        function handleFireButton() {
