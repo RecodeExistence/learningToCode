@@ -64,9 +64,11 @@ let model = {
                 let index = ship.locations.indexOf(guess);
 
                 if (index >= 0) { // if index returns positive integer, 
+                    view.displayMessage("That's a hit!  There must be more nearby!");
                     ship.hits[index] = "hit"; // update the matching index of hits that there's been a hit.
                     view.displayHit(guess); 	//update the view.  see displayHit method for info. 
                         //see isSunk multi-line comment below for explanation.  that method returns true, all locations of current ship hit, update the shipsSunk property. 
+
                         if (this.isSunk(ship)) {
                         		this.numShips--; 
                         		view.displayMessage(`You sank my battleship!`);
@@ -90,7 +92,10 @@ let model = {
                     }
                 }
                 return true;
-            }
+            }, 
+
+           
+            
         };
 
         /* Looks like it will be possible to dynamically add ships to the array.  create a new object containing
@@ -98,13 +103,60 @@ let model = {
 
            	Wait.. does that sound like a job for constructor functions? 
          */
-         model.fire("53");
-         model.fire("06");
-		model.fire("16");
-		model.fire("26");
-		model.fire("34");
-		model.fire("24");
-		model.fire("44");
-		model.fire("12");
-		model.fire("11");
-		model.fire("10");
+     
+
+         let controller = {
+             guesses: 0 , 
+
+             processGuess: function(guess) {
+                 let location = parseGuess(guess);
+                 if(location) {
+                     this.guesses++ ;
+                     let hit = model.fire(location);
+                     if(hit && model.shipsSunk === model.numShips) {
+                         view.displayMessage(`You sank all my battleships, in ${this.guesses} guesses`);
+                     }
+
+                 }
+             }
+         };
+
+         function parseGuess(guess) {
+            let alphabet = ["A", "B", "C", "D", "E","F","G"]; 
+
+            if(guess === null || guess.length !== 2) {
+                alert("Oops, please enter a letter and a number on the board.");
+            } else {
+                firstChar = guess.charAt(0);
+                let row = alphabet.indexOf(firstChar);
+                let column = guess.charAt(1);
+
+                if (isNaN(row) || isNaN(column)) {
+                    alert("Oops, that isn't on the board");
+                } else if (row < 0 || row >= model.boardSize || 
+                            column < 0 || column >= model.boardSize) {
+                                alert("OOps, that's off the board");
+                            } else {
+                                return row + column ; 
+                            }
+            }
+            return null; 
+        
+        }
+
+       function init() {
+           let fireButton = document.getElementById("fireButton"); 
+           fireButton.onclick = handleFireButton;
+       }
+
+       function handleFireButton() {
+           let guessInput = document.getElementById("guessInput"); 
+           let guess = guessInput.value;
+           controller.processGuess(guess);
+
+           guessInput.value = "";
+
+       }
+      
+
+       window.onload = init;
