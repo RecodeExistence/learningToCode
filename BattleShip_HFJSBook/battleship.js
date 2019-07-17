@@ -151,15 +151,14 @@ let model = {
            guessInput.onkeypress = handleKeyPress;
        }
 
-       function handleKeypress(e) {
-           let fireButton = document.getElementById("fireButton");
-           if (e.keyCode === 13) {
-               fireButton.click();
-               return false;
-           }
-       }
-
-       function handleFireButton() {
+       function handleKeyPress(e) {
+        let fireButton = document.getElementById("fireButton");
+        if (e.keyCode === 13) {
+            fireButton.click();
+            return false;
+        }
+    }
+        function handleFireButton() {
            let guessInput = document.getElementById("guessInput"); 
            let guess = guessInput.value;
            controller.processGuess(guess);
