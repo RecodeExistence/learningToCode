@@ -53,7 +53,7 @@ let model = {
 
             generateShipLocations: function() {
                 let locations; 
-                for (let i = -0 ; i < this.numShips; i++) {
+                for (let i = 0 ; i < this.numShips; i++) {
                     do {
                         locations = this.generateShip();
                     } while (this.collision(locations));
