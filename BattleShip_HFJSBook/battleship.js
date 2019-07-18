@@ -11,23 +11,23 @@ let model = {
 
         // properties - current state:  
         ships: [ { locations: [0, 0, 0], hits: ["", "", ""] },
-                {  locations: [0, 0, 0], hits: ["", "", ""] },
-                {  locations: [0, 0, 0], hits: ["", "", ""] } ],
+                 { locations: [0, 0, 0], hits: ["", "", ""] },
+                 { locations: [0, 0, 0], hits: ["", "", ""] } 
+                ],
         // method fires upon ships, decides if hit or miss.
         fire: function(guess) {
 
-            for (let i = 0; i < this.numShips ; i++) {
+            for (let i = 0 ; i < this.numShips ; i++) {
                 let ship = this.ships[i];
                 let index = ship.locations.indexOf(guess);
 
                 if (index >= 0) { // if index returns positive integer, 
-                    view.displayMessage("That's a hit!  There must be more nearby!");
-                    ship.hits[index] = "hit"; // update the matching index of hits that there's been a hit.
-                    view.displayHit(guess); 	//update the view.  see displayHit method for info. 
+                    ship.hits[index] = "hit"; 
+                    view.displayHit(guess);
+                    view.displayMessage("HIT! Are more nearby?");  	//update the view.  see displayHit method for info. 
                         //see isSunk multi-line comment below for explanation.  that method returns true, all locations of current ship hit, update the shipsSunk property. 
 
                         if (this.isSunk(ship)) {
-                        		this.numShips--; 
                         		view.displayMessage(`You sank my battleship!`);
                                 this.shipsSunk++;
                             }
@@ -53,36 +53,38 @@ let model = {
 
             generateShipLocations: function() {
                 let locations; 
-                for (let i = -0 ; i < this.numShips; i++) {
+                for (let i = 0 ; i < this.numShips; i++) {
                     do {
                         locations = this.generateShip();
                     } while (this.collision(locations));
                     this.ships[i].locations = locations;
                 }
+                console.log("Ships array: "); 
+                console.log(this.ships); 
             },
 
             generateShip: function() {
                 let direction = Math.floor(Math.random()*2);
                 let row, col;
 
-                if (direction) {
+                if (direction === 1) {
                     // starting location, horizontal.
                     row = Math.floor(Math.random() * this.boardSize);
-                    col = Math.floor(Math.random()* (this.boardSize - this.shipLength));
+                    col = Math.floor(Math.random()* (this.boardSize - this.shipLength + 1));
                 } else {
                     // starting location, vertical.
-                    row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+                    row = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
                     col = Math.floor(Math.random() * this.boardSize); 
                 }
 
                 let newShipLocations = []; 
                 for (let i = 0 ; i < this.shipLength ; i++) {
-                    if(direction) {
+                    if(direction === 1) {
                         //push location to horizontal ship array.
-                        newShipLocations.push(row + "" + (col +i));
+                        newShipLocations.push(row + "" + (col + i));
                     } else {
                         //push location to vertical ship array. 
-                        newShipLocations.push((row+i) + "" + col);
+                        newShipLocations.push((row + i) + "" + col);
                     }
                 }
                 return newShipLocations;
@@ -91,7 +93,7 @@ let model = {
 
                 collision: function(locations) {
                     for (let i = 0 ; i < this.numShips ; i++) {
-                        let ship = model.ships[i]; 
+                        let ship = this.ships[i]; 
                         for (let j = 0 ; j <  locations.length ; j++) {
                             if(ship.locations.indexOf(locations[j]) >= 0) {
                                 return true; // return true if the randomly generated location matches an already generated location.
@@ -111,7 +113,7 @@ let model = {
            	Wait.. does that sound like a job for constructor functions? 
          */
 
-var view = {
+let view = {
     // this method takes a string message and displays it
     // in the message display area
     displayMessage: function(msg) {
@@ -157,15 +159,14 @@ var view = {
             if(guess === null || guess.length !== 2) {
                 alert("Oops, please enter a letter and a number on the board.");
             } else {
-                firstChar = guess.charAt(0);
-                let row = alphabet.indexOf(firstChar);
+                let row = alphabet.indexOf(guess.charAt(0));
                 let column = guess.charAt(1);
 
                 if (isNaN(row) || isNaN(column)) {
                     alert("Oops, that isn't on the board");
                 } else if (row < 0 || row >= model.boardSize || 
                             column < 0 || column >= model.boardSize) {
-                                alert("OOps, that's off the board");
+                                alert("Oops, that's off the board");
                             } else {
                                 return row + column ; 
                             }
