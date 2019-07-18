@@ -1,32 +1,7 @@
 /*Below is the MODEL VIEW CONTROLLER for the battleship web app.
 First up is the VIEW.  This controls aspects like displaying messages to the user, displaying the hit image on the 
 correct cell location, and displaying the miss image on the cell location entered when it's not a match.  
-
 Essentially; The view controls... the view.  Things being displayed on the page are controlled from here. */
-var view = {
-    // this method takes a string message and displays it
-    // in the message display area
-    displayMessage: function(msg) {
-        let messageArea = document.getElementById("messageArea");
-        messageArea.innerHTML = msg;
-    },
-
-
-    // this method takes the users entered location, converts from a game grid to an id from the table in html
-    displayHit: function(location) {
-        // Display the hit.png on the cell entered.
-        let cell = document.getElementById(location);
-        cell.setAttribute("class", "hit");
-    },
-
-    displayMiss: function(location) {
-        // Display the hit.png on the cell entered.
-        let cell = document.getElementById(location);
-        cell.setAttribute("class", "miss");
-    }
-};
-
-
 let model = {
         // game set up - set up grid size, how many ships in game.
         boardSize: 7, // size of board for grid. 
@@ -35,27 +10,9 @@ let model = {
         shipsSunk: 0 , // how many ships have been sunk so far. 
 
         // properties - current state:  
-        ships: [
-            /*array of objects, each object stores the locations of a ship, how many hit's it's had.  
-					Access the locations and hits indexes just like any other array indexes.*/
-            { //index[0] object.  array of locations, array of hits.   
-                locations: ["06", "16", "26"],
-                hits: ["", "", ""]
-            }, //end of index[0] object, first ship.
-
-            { //index[1] object. 
-                locations: ["24", "34", "44"],
-                hits: ["", "", ""]
-            }, //end of index[1] object , second ship.
-
-            { //index[2] object.
-                locations: ["10", "11", "12"],
-                hits: ["", "", ""]
-            } //end of index[2] object, third ship.   
-
-
-        ], // end of array of objects.  , 	// ship locations and hits
-
+        ships: [ { locations: [0, 0, 0], hits: ["", "", ""] },
+                {  locations: [0, 0, 0], hits: ["", "", ""] },
+                {  locations: [0, 0, 0], hits: ["", "", ""] } ],
         // method fires upon ships, decides if hit or miss.
         fire: function(guess) {
 
@@ -94,15 +51,88 @@ let model = {
                 return true;
             }, 
 
-           
+            generateShipLocations: function() {
+                let locations; 
+                for (let i = -0 ; i < this.numShips; i++) {
+                    do {
+                        locations = this.generateShip();
+                    } while (this.collision(locations));
+                    this.ships[i].locations = locations;
+                }
+            },
+
+            generateShip: function() {
+                let direction = Math.floor(Math.random()*2);
+                let row, col;
+
+                if (direction) {
+                    // starting location, horizontal.
+                    row = Math.floor(Math.random() * this.boardSize);
+                    col = Math.floor(Math.random()* (this.boardSize - this.shipLength));
+                } else {
+                    // starting location, vertical.
+                    row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+                    col = Math.floor(Math.random() * this.boardSize); 
+                }
+
+                let newShipLocations = []; 
+                for (let i = 0 ; i < this.shipLength ; i++) {
+                    if(direction) {
+                        //push location to horizontal ship array.
+                        newShipLocations.push(row + "" + (col +i));
+                    } else {
+                        //push location to vertical ship array. 
+                        newShipLocations.push((row+i) + "" + col);
+                    }
+                }
+                return newShipLocations;
+            },
+            
+
+                collision: function(locations) {
+                    for (let i = 0 ; i < this.numShips ; i++) {
+                        let ship = model.ships[i]; 
+                        for (let j = 0 ; j <  locations.length ; j++) {
+                            if(ship.locations.indexOf(locations[j]) >= 0) {
+                                return true; // return true if the randomly generated location matches an already generated location.
+                                }
+                             
+                        }
+                    }
+                    return false; 
+                }
+
+                
             
         };
 
         /* Looks like it will be possible to dynamically add ships to the array.  create a new object containing
            locations and hits for every new ship generating, and push() it to the ships array.  
-
            	Wait.. does that sound like a job for constructor functions? 
          */
+
+var view = {
+    // this method takes a string message and displays it
+    // in the message display area
+    displayMessage: function(msg) {
+        let messageArea = document.getElementById("messageArea");
+        messageArea.innerHTML = msg;
+    },
+
+
+    // this method takes the users entered location, converts from a game grid to an id from the table in html
+    displayHit: function(location) {
+        // Display the hit.png on the cell entered.
+        let cell = document.getElementById(location);
+        cell.setAttribute("class", "hit");
+    },
+
+    displayMiss: function(location) {
+        // Display the hit.png on the cell entered.
+        let cell = document.getElementById(location);
+        cell.setAttribute("class", "miss");
+    }
+};
      
 
          let controller = {
@@ -144,21 +174,29 @@ let model = {
         
         }
 
-       function init() {
+
+        function handleKeyPress(e) {
+            let fireButton = document.getElementById("fireButton");
+            if (e.keyCode === 13) {
+                fireButton.click();
+                return false;
+            }
+        }
+ 
+       
+        //init to be called when page loaded.
+        window.onload = init;
+        function init() {
            let fireButton = document.getElementById("fireButton"); 
            fireButton.onclick = handleFireButton;
            let guessInput = document.getElementById("guessInput");
            guessInput.onkeypress = handleKeyPress;
+
+           model.generateShipLocations();
        }
 
-       function handleKeyPress(e) {
-        let fireButton = document.getElementById("fireButton");
-        if (e.keyCode === 13) {
-            fireButton.click();
-            return false;
-        }
-    }
-        function handleFireButton() {
+       
+       function handleFireButton() {
            let guessInput = document.getElementById("guessInput"); 
            let guess = guessInput.value;
            controller.processGuess(guess);
@@ -167,5 +205,3 @@ let model = {
 
        }
       
-
-       window.onload = init;
